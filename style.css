@@ -4,8 +4,93 @@
 }
 
 body {
-    color: #293264;
+    color: black;
     background-color: #F5F7FB;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: red;
+    height: 100px;
+}
+
+header nav {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 50px;
+    width: 100%;
+}
+
+header nav img {
+    height: 70px;
+    width: 70px;
+    margin-top: 15px;
+}
+
+header button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+}
+
+h1 {
+    margin-left: 20px;
+}
+
+#heading-display {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+}
+
+#decade-display {
+    margin-top: 40px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    height: 100px;
+}
+
+footer button {
+    margin: 10px;
+}
+
+#ran-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    background-color: blue;
+}
+
+.ran-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+    background-color: lightblue;
+}
+
+.ran-item img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+
+#item-info {
+    display: none;
 }
 
 #intro {

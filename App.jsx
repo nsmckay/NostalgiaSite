@@ -6,7 +6,7 @@ import Footer from "./Footer"
 
 export default function App() {
     return(
-        <div>
+        <div id="app-div">
             <Header />
             <MainGrid />
             <Footer />

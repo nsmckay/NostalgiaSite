@@ -6,7 +6,7 @@ export default function Header() {
             <nav>
                 <div></div>
                 <div id="heading-display">
-                    <img src="placeHolder.png" height="50" width="50"/>
+                    <img src="img/logo_2020s_1.png" height="50" width="50"/>
                     <h1>S.S. NOSTALGIA</h1>
                 </div>
                 <button>≡</button>

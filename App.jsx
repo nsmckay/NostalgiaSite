@@ -5,11 +5,51 @@ import MainGrid from "./MainGrid"
 import Footer from "./Footer"
 
 export default function App() {
+
+    const [logo, setLogo] = React.useState("img/logo_2020s_1.png")
+    const [headDecade, setHeadDecade] = React.useState("2020s")
+
+    function changeTheme(decade) {
+        switch(decade) {
+            case "1950s":
+                setLogo("img/logo_50s_1.png")
+                setHeadDecade("1950s")
+                break
+            case "1960s":
+                setLogo("img/logo_60s_1.png")
+                setHeadDecade("1960s")
+                break
+            case "1970s":
+                setLogo("img/logo_70s_1.png")
+                setHeadDecade("1970s")
+                break
+            case "1980s":
+                setLogo("img/logo_80s_1.png")
+                setHeadDecade("1980s")
+                break
+            case "1990s":
+                setLogo("img/logo_90s_1.png")
+                setHeadDecade("1990s")
+                break
+            case "2000s":
+                setLogo("img/logo_2000s_1.png")
+                setHeadDecade("2000s")
+                break
+            case "2010s":
+                setLogo("img/logo_2010s_1.png")
+                setHeadDecade("2010s")
+                break
+            default:
+                setLogo("img/logo_2020s_1.png")
+                setHeadDecade("2020s")
+        }
+    }
+
     return(
         <div id="app-div">
-            <Header />
+            <Header logo={logo} decade={headDecade}/>
             <MainGrid />
-            <Footer />
+            <Footer buttonFunc={changeTheme}/>
         </div>
     )
 }

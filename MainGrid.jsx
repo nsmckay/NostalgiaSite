@@ -1,30 +1,30 @@
 import React from "react"
 import RandomItem from "./RandomItem"
 
-export default function MainGrid() {
+export default function MainGrid(props) {
     return(
         <main>
-            <div id="ran-grid">
-                <RandomItem />
-                <RandomItem />
-                <RandomItem />
-                <RandomItem />
-                <RandomItem />
-                <RandomItem />
-                <RandomItem />
-                <RandomItem />
-                <RandomItem />
-                <RandomItem />
-                <RandomItem />
-                <RandomItem />
-                <RandomItem />
-                <RandomItem />
-                <RandomItem />
-                <RandomItem />
-                <RandomItem />
-                <RandomItem />
-                <RandomItem />
-                <RandomItem />
+            <div id="ran-grid" style={props.mainGridStyles}>
+                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles}/>
+                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles}/>
+                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles}/>
+                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles}/>
+                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles}/>
+                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
+                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
+                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
+                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
+                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
+                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
+                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
+                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
+                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
+                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
+                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
+                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
+                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
+                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
+                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
             </div>
             <div id="item-info">
                 <div id="item-header">

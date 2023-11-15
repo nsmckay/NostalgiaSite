@@ -5,36 +5,36 @@ export default function MainGrid(props) {
     return(
         <main>
             <div id="ran-grid" style={props.mainGridStyles}>
-                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles}/>
-                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles}/>
-                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles}/>
-                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles}/>
-                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles}/>
-                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
-                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
-                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
-                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
-                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
-                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
-                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
-                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
-                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
-                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
-                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
-                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
-                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
-                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
-                <RandomItem randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} />
+                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
+                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
+                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
+                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
+                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
+                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
+                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
+                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
+                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
+                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
+                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
+                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
+                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
+                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
+                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
+                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
+                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
+                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
+                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
+                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
             </div>
-            <div id="item-info">
-                <div id="item-header">
+            <div id="item-info" style={props.itemInfoStyles}>
+                <div id="item-header" style={props.itemDescriptionStyles}>
                     <div></div>
-                    <h3>ITEM</h3>
-                    <button>↩</button>
+                    <h3 style={props.itemDescriptionStyles}>ITEM</h3>
+                    <button onClick={()=>props.returnFunc()}>↩</button>
                 </div>
                 <img src="placeHolder.png" height="200" width="200"/>
-                <div id="item-description">
-                    <p>Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here.</p>
+                <div id="item-description" style={props.itemDescriptionStyles}>
+                    <p style={props.itemDescriptionStyles}>Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here.</p>
                 </div>
             </div>
             <div id="welcome">

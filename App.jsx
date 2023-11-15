@@ -21,7 +21,8 @@ export default function App() {
         backgroundColor: "red"
     })
     const [mainGridStyles, setMainGridStyles] = React.useState({
-        backgroundColor: "blue"
+        backgroundColor: "blue",
+        display: "grid"
     })
     const [randomItemStyles, setRandomItemStyles] = React.useState({
         backgroundColor: "lightblue"
@@ -29,12 +30,21 @@ export default function App() {
     const [randomImageStyles, setRandomImageStyles] = React.useState({
         borderRadius: "50%"
     })
+    const [itemInfoStyles, setItemInfoStyles] = React.useState({
+        //display: "none"
+    })
+    const [itemDescriptionStyles, setItemDescriptionStyles] = React.useState({
+        fontFamily: "'Helvetica', sans-serif"
+    })
     const [footerButtonStyles, setFooterButtonStyles] = React.useState({
         color: "black",
         borderRadius: "10%"
     })
 
     function changeTheme(decade) {
+        setItemInfoStyles({
+            display: "none"
+        })
         switch(decade) {
             case "1950s":
                 setLogo("img/logo_50s_2.png")
@@ -80,6 +90,7 @@ export default function App() {
                     fontFamily: "'Georgia', serif",
                     boxShadow: "1px 1px 5px black"
                 })
+                document.body.style = "background: #2b2116" //raw javasacript is only solution I could find to change body color
                 break
             case "1960s":
                 setLogo("img/logo_60s_1.png")
@@ -121,6 +132,7 @@ export default function App() {
                     fontFamily: "'Helvetica', serif",
                     boxShadow: "1px 1px black"
                 })
+                document.body.style = "background: #336d80"
                 break
             case "1970s":
                 setLogo("img/logo_70s_1.png")
@@ -162,6 +174,7 @@ export default function App() {
                     fontFamily: "'Arial', serif",
                     boxShadow: "1px 1px black"
                 })
+                document.body.style = "background: #951458"
                 break
             case "1980s":
                 setLogo("img/logo_80s_1.png")
@@ -203,6 +216,7 @@ export default function App() {
                     fontFamily: "Courier, monospace",
                     boxShadow: "1px 1px 3px black"
                 })
+                document.body.style = "background: black"
                 break
             case "1990s":
                 setLogo("img/logo_90s_2.png")
@@ -242,6 +256,7 @@ export default function App() {
                     fontFamily: "'Comic Sans MS', Comic Sans, cursive",
                     boxShadow: "1px 1px black"
                 })
+                document.body.style = "background: lightgrey"
                 break
             case "2000s":
                 setLogo("img/logo_2000s_1.png")
@@ -280,6 +295,7 @@ export default function App() {
                     fontFamily: "'Helvetica', sans-serif",
                     boxShadow: "2px 2px 1px black"
                 })
+                document.body.style = "background: black"
                 break
             case "2010s":
                 setLogo("img/logo_2010s_1.png")
@@ -314,6 +330,7 @@ export default function App() {
                     fontFamily: "'Helvetica', sans-serif",
                     boxShadow: "1px 1px 3px black"
                 })
+                document.body.style = "background: skyblue"
                 break
             default:
                 setLogo("img/logo_2020s_1.png")
@@ -348,13 +365,128 @@ export default function App() {
                     fontFamily: "'Helvetica', sans-serif",
                     boxShadow: "1px 1px 3px black"
                 })
+                document.body.style = "background: #454545"
         }
+    }
+
+    function displayItemInfo(decade) {
+        setMainGridStyles({
+            display: "none"
+        })
+        switch(decade) {
+            case "1950s":
+                setItemInfoStyles({
+                    display: "flex",
+                    backgroundColor: "#fff0a3",
+                    backgroundImage: 'url("img/wallpaper_50s_2.png")',
+                    backgroundSize: "",
+                    color: "black",
+                    fontFamily: "'Georgia', serif"
+                })
+                setItemDescriptionStyles({
+                    fontFamily: "'Georgia', serif"
+                })
+                break
+            case "1960s":
+                setItemInfoStyles({
+                    display: "flex",
+                    backgroundColor: "#bcdfeb",
+                    backgroundImage: 'url("img/wallpaper_60s_2.png")',
+                    backgroundSize: "500px",
+                    color: "black",
+                    fontFamily: "'Helvetica', sans-serif"
+                })
+                setItemDescriptionStyles({
+                    fontFamily: "'Helvetica', sans-serif"
+                })
+                break
+            case "1970s":
+                setItemInfoStyles({
+                    display: "flex",
+                    backgroundColor: "#e3afba",
+                    backgroundImage: 'url("img/wallpaper_70s_2.png")',
+                    backgroundSize: "cover",
+                    color: "white",
+                    fontFamily: "'Arial', sans-serif"
+                })
+                setItemDescriptionStyles({
+                    fontFamily: "'Arial', sans-serif"
+                })
+                break
+            case "1980s":
+                setItemInfoStyles({
+                    display: "flex",
+                    backgroundColor: "black",
+                    backgroundImage: 'url("img/wallpaper_80s.png")',
+                    backgroundSize: "cover",
+                    color: "#ff3864",
+                    fontFamily: "Courier, monospace"
+                })
+                setItemDescriptionStyles({
+                    fontFamily: "Courier, monospace"
+                })
+                break
+            case "1990s":
+                setItemInfoStyles({
+                    display: "flex",
+                    backgroundColor: "white",
+                    color: "black",
+                    fontFamily: "'Comic Sans MS', Comic Sans, cursive"
+                })
+                setItemDescriptionStyles({
+                    fontFamily: "'Comic Sans MS', Comic Sans, cursive"
+                })
+                break
+            case "2000s":
+                setItemInfoStyles({
+                    display: "flex",
+                    backgroundColor: "yellow",
+                    color: "black",
+                    fontFamily: "'Helvetica', sans-serif"
+                })
+                setItemDescriptionStyles({
+                    fontFamily: "'Helvetica', sans-serif"
+                })
+                break
+            case "2010s":
+                setItemInfoStyles({
+                    display: "flex",
+                    backgroundColor: "white",
+                    color: "black",
+                    fontFamily: "'Helvetica', sans-serif"
+                })
+                setItemDescriptionStyles({
+                    fontFamily: "'Helvetica', sans-serif"
+                })
+                break
+            default:
+                setItemInfoStyles({
+                    display: "flex",
+                    backgroundColor: "black",
+                    color: "white",
+                    fontFamily: "'Helvetica', sans-serif"
+                })
+                setItemDescriptionStyles({
+                    fontFamily: "'Helvetica', sans-serif"
+                })
+        }
+    }
+
+    function returnToGrid() {
+        setMainGridStyles({
+            display: "grid",
+            backgroundColor: "red"
+        })
+        setItemInfoStyles({
+            display: "none"
+        })
+        changeTheme(headDecade)
     }
 
     return(
         <div id="app-div">
             <Header logo={logo} logoRadius={logoRadius} decade={headDecade} headingFont={headingFontStyles} mainFont={mainFontStyles} headerStyles={headerFooterStyles}/>
-            <MainGrid mainGridStyles={mainGridStyles} randomItemStyles={randomItemStyles} randomImageStyles={randomImageStyles}/>
+            <MainGrid itemClickFunc={displayItemInfo} returnFunc={returnToGrid} mainGridStyles={mainGridStyles} randomItemStyles={randomItemStyles} randomImageStyles={randomImageStyles} itemInfoStyles={itemInfoStyles} itemDescriptionStyles={itemDescriptionStyles} decade={headDecade}/>
             <Footer buttonFunc={changeTheme} footerStyles={headerFooterStyles} footerButtonStyles={footerButtonStyles}/>
         </div>
     )

@@ -1,6 +1,7 @@
 import React from "react"
 //import Question from "./Question"
 import Header from "./Header"
+import BurgerMenu from "./BurgerMenu"
 import MainGrid from "./MainGrid"
 import Footer from "./Footer"
 
@@ -19,6 +20,19 @@ export default function App() {
     })
     const [headerFooterStyles, setHeaderFooterStyles] = React.useState({
         backgroundColor: "red"
+    })
+    const [burgerMenuOpen, setBurgerMenuOpen] = React.useState(false) //false when burger menu not opened
+    const [homeStyles, setHomeStyles] = React.useState({
+        display: "none"
+    })
+    const [homeDescriptionStyles, setHomeDescriptionStyles] = React.useState({
+        fontFamily: "'Helvetica', sans-serif"
+    })
+    const [disclaimerStyles, setDisclaimerStyles] = React.useState({
+        display: "none"
+    })
+    const [disclaimerDescriptionStyles, setDisclaimerDescriptionStyles] = React.useState({
+        fontFamily: "'Helvetica', sans-serif"
     })
     const [mainGridStyles, setMainGridStyles] = React.useState({
         backgroundColor: "blue",
@@ -40,6 +54,54 @@ export default function App() {
         color: "black",
         borderRadius: "10%"
     })
+
+    function toggleBurgerMenu() {
+        if(burgerMenuOpen) {
+            setBurgerMenuOpen(false)
+        } else {
+            setBurgerMenuOpen(true)
+        }
+    }
+
+    function menuHelp() {
+        changeTheme("2020s")
+        setDisclaimerStyles({
+            display: "none"
+        })
+        setMainGridStyles({
+            display: "none"
+        })
+        setHomeStyles({
+            display: "flex",
+            backgroundColor: "black",
+            color: "white",
+            fontFamily: "'Helvetica', sans-serif"
+        })
+        setHomeDescriptionStyles({
+            fontFamily: "'Helvetica', sans-serif"
+        })
+        toggleBurgerMenu()
+    }
+
+    function menuDisclaimer() {
+        changeTheme("2020s")
+        setHomeStyles({
+            display: "none"
+        })
+        setMainGridStyles({
+            display: "none"
+        })
+        setDisclaimerStyles({
+            display: "flex",
+            backgroundColor: "black",
+            color: "white",
+            fontFamily: "'Helvetica', sans-serif"
+        })
+        setDisclaimerDescriptionStyles({
+            fontFamily: "'Helvetica', sans-serif"
+        })
+        toggleBurgerMenu()
+    }
 
     function changeTheme(decade) {
         setItemInfoStyles({
@@ -485,8 +547,9 @@ export default function App() {
 
     return(
         <div id="app-div">
-            <Header logo={logo} logoRadius={logoRadius} decade={headDecade} headingFont={headingFontStyles} mainFont={mainFontStyles} headerStyles={headerFooterStyles}/>
-            <MainGrid itemClickFunc={displayItemInfo} returnFunc={returnToGrid} mainGridStyles={mainGridStyles} randomItemStyles={randomItemStyles} randomImageStyles={randomImageStyles} itemInfoStyles={itemInfoStyles} itemDescriptionStyles={itemDescriptionStyles} decade={headDecade}/>
+            <BurgerMenu burgerMenuOpen={burgerMenuOpen} changeTheme={changeTheme} menuHelp={menuHelp} menuDisclaimer={menuDisclaimer}/>
+            <Header burgerFunc={toggleBurgerMenu} burgerMenuOpen={burgerMenuOpen} logo={logo} logoRadius={logoRadius} decade={headDecade} headingFont={headingFontStyles} mainFont={mainFontStyles} headerStyles={headerFooterStyles}/>
+            <MainGrid itemClickFunc={displayItemInfo} returnFunc={returnToGrid} mainGridStyles={mainGridStyles} homeStyles={homeStyles} homeDescriptionStyles={homeDescriptionStyles} disclaimerStyles={disclaimerStyles} disclaimerDescriptionStyles={disclaimerDescriptionStyles} randomItemStyles={randomItemStyles} randomImageStyles={randomImageStyles} itemInfoStyles={itemInfoStyles} itemDescriptionStyles={itemDescriptionStyles} decade={headDecade}/>
             <Footer buttonFunc={changeTheme} footerStyles={headerFooterStyles} footerButtonStyles={footerButtonStyles}/>
         </div>
     )

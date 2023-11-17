@@ -9,7 +9,7 @@ export default function Header(props) {
                     <img src={props.logo} height="50" width="50" style={props.logoRadius}/>
                     <h1 style={props.headingFont}>S.S. NOSTALGIA</h1>
                 </div>
-                <button>≡</button>
+                <button onClick={()=>props.burgerFunc()}>{props.burgerMenuOpen ? "X" : "≡"}</button>
             </nav>
             <div id="decade-display">
                 <h2 style={props.mainFont}>{props.decade}</h2>

@@ -119,6 +119,7 @@ footer {
 footer button {
     margin: 10px;
     padding: 5px;
+    width: 60px;
 }
 
 #ran-grid {
@@ -134,6 +135,7 @@ footer button {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     padding: 20px;
     background-color: lightblue;
 }
@@ -202,6 +204,196 @@ footer button {
     padding-left: 100px;
     padding-right: 100px;
 }   
+
+@media (max-width: 1400px) {
+    .burger-open{
+        transform: translateX(0);
+        /* transform: translateX(-50vw); */
+        /* transform: translateX(-25%); */
+        /* float: right; */
+        right: 0;
+        top: -50%;
+        position: sticky;
+        transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+    }
+}
+
+@media (max-width: 1200px) {
+    #ran-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+        padding: 10px;
+    }
+    #item-info, #welcome, #disclaimer {
+        width: 70%;
+    }
+    #welcome, #disclaimer {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+    #item-description {
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+}
+
+@media (max-width: 1000px) {
+    #ran-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+        padding: 10px;
+    }
+    #item-info, #welcome, #disclaimer {
+        width: 80%;
+    }
+    #welcome, #disclaimer {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+    #item-description {
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+}
+
+@media (max-width: 800px) {
+    header, footer {
+        background-color: darkred;
+    }
+    #ran-grid {
+        background-color: darkblue;
+    }
+    #ran-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+        padding: 10px;
+    }
+    .ran-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 20px;
+        height: fit-content;
+        aspect-ratio: 1/1;
+    }
+    .ran-item img {
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+    }
+    .ran-item img:hover {
+        cursor: pointer;
+        height: 160px;
+        width: 160px;
+    }
+    .burger-open ul li {
+        font-size: 18px;
+    }
+    #item-info, #welcome, #disclaimer {
+        width: 90%;
+    }
+    #welcome, #disclaimer {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    #item-description {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    header, footer {
+        background-color: darkred;
+    }
+    #ran-grid {
+        background-color: darkblue;
+    }
+    #ran-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+        padding: 10px;
+    }
+    .ran-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 20px;
+        height: fit-content;
+        aspect-ratio: 1/1;
+    }
+    .ran-item img {
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+    }
+    .ran-item img:hover {
+        cursor: pointer;
+        height: 160px;
+        width: 160px;
+    }
+    footer nav {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        grid-auto-rows: minmax(10px, auto);
+    }
+    footer button {
+        margin: 5px;
+        padding: 5px;
+    }
+    .burger-open ul li {
+        font-size: 14px;
+    }
+    #item-info, #welcome, #disclaimer {
+        width: 100%;
+    }
+    #welcome, #disclaimer {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    #item-description {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    header, footer {
+        background-color: darkred;
+    }
+    #ran-grid {
+        background-color: darkblue;
+    }
+    #ran-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+        padding: 10px;
+    }
+    .ran-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 20px;
+        height: fit-content;
+        aspect-ratio: 1/1;
+    }
+    .ran-item img {
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+    }
+    .ran-item img:hover {
+        cursor: pointer;
+        height: 130px;
+        width: 130px;
+    }
+}
 
 #intro {
     margin-top: 25%;

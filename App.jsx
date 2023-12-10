@@ -107,6 +107,12 @@ export default function App() {
         setItemInfoStyles({
             display: "none"
         })
+        setHomeStyles({
+            display: "none"
+        })
+        setDisclaimerStyles({
+            display: "none"
+        })
         switch(decade) {
             case "1950s":
                 setLogo("img/logo_50s_2.png")

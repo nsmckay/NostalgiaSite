@@ -32,7 +32,7 @@ export default function MainGrid(props) {
                     <h3 style={props.itemDescriptionStyles}>ITEM</h3>
                     <button onClick={()=>props.returnFunc()}>↩</button>
                 </div>
-                <img src="placeHolder.png" height="200" width="200"/>
+                <img src="img/placeHolder.png" height="200" width="200"/>
                 <div id="item-description" style={props.itemDescriptionStyles}>
                     <p style={props.itemDescriptionStyles}>Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here.</p>
                 </div>

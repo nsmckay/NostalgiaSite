@@ -7,7 +7,7 @@ import Footer from "./Footer"
 
 export default function App() {
 
-    const [logo, setLogo] = React.useState("img/logo_2020s_1.png")
+    const [logo, setLogo] = React.useState("img/logos/logo_2020s_1.png")
     const [logoRadius, setLogoRadius] = React.useState({
         borderRadius: "0%"
     })
@@ -115,7 +115,7 @@ export default function App() {
         })
         switch(decade) {
             case "1950s":
-                setLogo("img/logo_50s_2.png")
+                setLogo("img/logos/logo_50s_2.png")
                 setLogoRadius({
                     borderRadius: "0%",
                     border: "solid #e09e0d 5px",
@@ -136,7 +136,7 @@ export default function App() {
                 })
                 setHeaderFooterStyles({
                     backgroundColor: "#7a542b",
-                    backgroundImage: 'url("img/wallpaper_50s_1.png")',
+                    backgroundImage: 'url("img/wallpaper/wallpaper_50s_1.png")',
                     backgroundSize: "2000px"
                 })
                 setMainGridStyles({
@@ -144,7 +144,7 @@ export default function App() {
                 })
                 setRandomItemStyles({
                     backgroundColor: "#fff0a3",
-                    backgroundImage: 'url("img/wallpaper_50s_2.png")',
+                    backgroundImage: 'url("img/wallpaper/wallpaper_50s_2.png")',
                     backgroundSize: "300px"
                 })
                 setRandomImageStyles({
@@ -161,7 +161,7 @@ export default function App() {
                 document.body.style = "background: #2b2116" //raw javasacript is only solution I could find to change body color
                 break
             case "1960s":
-                setLogo("img/logo_60s_1.png")
+                setLogo("img/logos/logo_60s_1.png")
                 setLogoRadius({
                     borderRadius: "50%",
                     boxShadow: "2px 2px black"
@@ -178,7 +178,7 @@ export default function App() {
                 })
                 setHeaderFooterStyles({
                     backgroundColor: "#ffda75",
-                    backgroundImage: 'url("img/wallpaper_60s_1.png")',
+                    backgroundImage: 'url("img/wallpaper/wallpaper_60s_1.png")',
                     backgroundSize: "300px"
                 })
                 setMainGridStyles({
@@ -186,7 +186,7 @@ export default function App() {
                 })
                 setRandomItemStyles({
                     backgroundColor: "#bcdfeb",
-                    backgroundImage: 'url("img/wallpaper_60s_2.png")',
+                    backgroundImage: 'url("img/wallpaper/wallpaper_60s_2.png")',
                     backgroundSize: "100px"
                 })
                 setRandomImageStyles({
@@ -203,7 +203,7 @@ export default function App() {
                 document.body.style = "background: #336d80"
                 break
             case "1970s":
-                setLogo("img/logo_70s_1.png")
+                setLogo("img/logos/logo_70s_1.png")
                 setLogoRadius({
                     borderRadius: "50%",
                     boxShadow: "2px 2px black"
@@ -220,7 +220,7 @@ export default function App() {
                 })
                 setHeaderFooterStyles({
                     backgroundColor: "#d26020",
-                    backgroundImage: 'url("img/wallpaper_70s_1.png")',
+                    backgroundImage: 'url("img/wallpaper/wallpaper_70s_1.png")',
                     backgroundSize: "300px"
                 })
                 setMainGridStyles({
@@ -228,7 +228,7 @@ export default function App() {
                 })
                 setRandomItemStyles({
                     backgroundColor: "#e3afba",
-                    backgroundImage: 'url("img/wallpaper_70s_2.png")',
+                    backgroundImage: 'url("img/wallpaper/wallpaper_70s_2.png")',
                     backgroundSize: "250px"
                 })
                 setRandomImageStyles({
@@ -245,7 +245,7 @@ export default function App() {
                 document.body.style = "background: #951458"
                 break
             case "1980s":
-                setLogo("img/logo_80s_1.png")
+                setLogo("img/logos/logo_80s_1.png")
                 setLogoRadius({
                     borderRadius: "50%",
                     boxShadow: "0px 0px 3px orangered"
@@ -271,7 +271,7 @@ export default function App() {
                 })
                 setRandomItemStyles({
                     backgroundColor: "black",
-                    backgroundImage: 'url("img/wallpaper_80s.png")',
+                    backgroundImage: 'url("img/wallpaper/wallpaper_80s.png")',
                     backgroundSize: "1250px"
                 })
                 setRandomImageStyles({
@@ -287,7 +287,7 @@ export default function App() {
                 document.body.style = "background: black"
                 break
             case "1990s":
-                setLogo("img/logo_90s_2.png")
+                setLogo("img/logos/logo_90s_2.png")
                 setLogoRadius({
                     borderRadius: "0%",
                     border: "solid black 2px",
@@ -305,7 +305,7 @@ export default function App() {
                 })
                 setHeaderFooterStyles({
                     backgroundColor: "#b0c4de",
-                    backgroundImage: 'url("img/wallpaper_90s.png")',
+                    backgroundImage: 'url("img/wallpaper/wallpaper_90s.png")',
                     backgroundSize: "500px"
                 })
                 setMainGridStyles({
@@ -327,7 +327,7 @@ export default function App() {
                 document.body.style = "background: lightgrey"
                 break
             case "2000s":
-                setLogo("img/logo_2000s_1.png")
+                setLogo("img/logos/logo_2000s_1.png")
                 setLogoRadius({
                     borderRadius: "50%",
                     boxShadow: "3px 3px 1px black"
@@ -366,7 +366,7 @@ export default function App() {
                 document.body.style = "background: black"
                 break
             case "2010s":
-                setLogo("img/logo_2010s_1.png")
+                setLogo("img/logos/logo_2010s_1.png")
                 setLogoRadius({
                     borderRadius: "50%"
                 })
@@ -401,7 +401,7 @@ export default function App() {
                 document.body.style = "background: skyblue"
                 break
             default:
-                setLogo("img/logo_2020s_1.png")
+                setLogo("img/logos/logo_2020s_1.png")
                 setLogoRadius({
                     borderRadius: "50%"
                 })
@@ -446,7 +446,7 @@ export default function App() {
                 setItemInfoStyles({
                     display: "flex",
                     backgroundColor: "#fff0a3",
-                    backgroundImage: 'url("img/wallpaper_50s_2.png")',
+                    backgroundImage: 'url("img/wallpaper/wallpaper_50s_2.png")',
                     backgroundSize: "",
                     color: "black",
                     fontFamily: "'Georgia', serif"
@@ -459,7 +459,7 @@ export default function App() {
                 setItemInfoStyles({
                     display: "flex",
                     backgroundColor: "#bcdfeb",
-                    backgroundImage: 'url("img/wallpaper_60s_2.png")',
+                    backgroundImage: 'url("img/wallpaper/wallpaper_60s_2.png")',
                     backgroundSize: "500px",
                     color: "black",
                     fontFamily: "'Helvetica', sans-serif"
@@ -472,7 +472,7 @@ export default function App() {
                 setItemInfoStyles({
                     display: "flex",
                     backgroundColor: "#e3afba",
-                    backgroundImage: 'url("img/wallpaper_70s_2.png")',
+                    backgroundImage: 'url("img/wallpaper/wallpaper_70s_2.png")',
                     backgroundSize: "cover",
                     color: "white",
                     fontFamily: "'Arial', sans-serif"
@@ -485,7 +485,7 @@ export default function App() {
                 setItemInfoStyles({
                     display: "flex",
                     backgroundColor: "black",
-                    backgroundImage: 'url("img/wallpaper_80s.png")',
+                    backgroundImage: 'url("img/wallpaper/wallpaper_80s.png")',
                     backgroundSize: "cover",
                     color: "#ff3864",
                     fontFamily: "Courier, monospace"

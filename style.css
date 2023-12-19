@@ -175,6 +175,10 @@ footer button {
     font-size: 30px;
 }
 
+#item-subheader {
+    font-size: 12px;
+}
+
 #item-description {
     margin-left: 100px;
     margin-right: 100px;

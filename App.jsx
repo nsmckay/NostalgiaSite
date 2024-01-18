@@ -5,6 +5,15 @@ import BurgerMenu from "./BurgerMenu"
 import MainGrid from "./MainGrid"
 import Footer from "./Footer"
 
+import useSound from "use-sound"
+import snd50 from '/sound/50s_jingle.mp3'
+import snd60 from '/sound/60s_jingle.mp3'
+import snd70 from '/sound/70s_jingle.mp3'
+import snd80 from '/sound/80s_jingle.mp3'
+import snd90 from '/sound/90s_jingle.mp3'
+import snd2000 from '/sound/2000s_jingle.mp3'
+import snd2010 from '/sound/2010s_jingle.mp3'
+
 export default function App() {
 
     const [logo, setLogo] = React.useState("img/logos/logo_2020s_1.png")
@@ -54,6 +63,23 @@ export default function App() {
         color: "black",
         borderRadius: "10%"
     })
+
+    const[playSnd50] = useSound(snd50)
+    const[playSnd60] = useSound(snd60)
+    const[playSnd70] = useSound(snd70)
+    const[playSnd80] = useSound(snd80)
+    const[playSnd90] = useSound(snd90)
+    const[playSnd2000] = useSound(snd2000)
+    const[playSnd2010] = useSound(snd2010)
+
+    //let snd50 = new Audio('.sound/50s_jingle.mp3')
+    //let snd60 = new Audio('.sound/60s_jingle.mp3')
+    //let snd70 = new Audio('.sound/70s_jingle.mp3')
+    //let snd80 = new Audio('.sound/80s_jingle.mp3')
+    //let snd90 = new Audio('.sound/90s_jingle.mp3')
+    //let snd2000 = new Audio('.sound/2000s_jingle.mp3')
+    //let snd2010 = new Audio('.sound/2010s_jingle.mp3')
+    //let snd2020 = new Audio('.sound/2010s_jingle.mp3')
 
     function toggleBurgerMenu() {
         if(burgerMenuOpen) {
@@ -115,6 +141,8 @@ export default function App() {
         })
         switch(decade) {
             case "1950s":
+                //snd50.play()
+                playSnd50()
                 setLogo("img/logos/logo_50s_2.png")
                 setLogoRadius({
                     borderRadius: "0%",
@@ -161,6 +189,8 @@ export default function App() {
                 document.body.style = "background: #2b2116" //raw javasacript is only solution I could find to change body color
                 break
             case "1960s":
+                //snd60.play()
+                playSnd60()
                 setLogo("img/logos/logo_60s_1.png")
                 setLogoRadius({
                     borderRadius: "50%",
@@ -203,6 +233,8 @@ export default function App() {
                 document.body.style = "background: #336d80"
                 break
             case "1970s":
+                //snd70.play()
+                playSnd70()
                 setLogo("img/logos/logo_70s_1.png")
                 setLogoRadius({
                     borderRadius: "50%",
@@ -245,6 +277,8 @@ export default function App() {
                 document.body.style = "background: #951458"
                 break
             case "1980s":
+                //snd80.play()
+                playSnd80()
                 setLogo("img/logos/logo_80s_1.png")
                 setLogoRadius({
                     borderRadius: "50%",
@@ -287,6 +321,8 @@ export default function App() {
                 document.body.style = "background: black"
                 break
             case "1990s":
+                //snd90.play()
+                playSnd90()
                 setLogo("img/logos/logo_90s_2.png")
                 setLogoRadius({
                     borderRadius: "0%",
@@ -327,6 +363,8 @@ export default function App() {
                 document.body.style = "background: lightgrey"
                 break
             case "2000s":
+                //snd2000.play()
+                playSnd2000()
                 setLogo("img/logos/logo_2000s_1.png")
                 setLogoRadius({
                     borderRadius: "50%",
@@ -366,6 +404,8 @@ export default function App() {
                 document.body.style = "background: black"
                 break
             case "2010s":
+                //snd2010.play()
+                playSnd2010()
                 setLogo("img/logos/logo_2010s_1.png")
                 setLogoRadius({
                     borderRadius: "50%"
@@ -401,6 +441,8 @@ export default function App() {
                 document.body.style = "background: skyblue"
                 break
             default:
+                //snd2020.play()
+                //playSnd2010()
                 setLogo("img/logos/logo_2020s_1.png")
                 setLogoRadius({
                     borderRadius: "50%"

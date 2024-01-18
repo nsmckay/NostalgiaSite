@@ -121,6 +121,12 @@ footer button {
     padding: 5px;
     width: 60px;
 }
+footer button:hover {
+    cursor: pointer;
+    font-size: larger;
+    height: 40px;
+    width: 70px;
+}
 
 #ran-grid {
     display: grid; /* initialise to grid */

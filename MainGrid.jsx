@@ -5,26 +5,27 @@ export default function MainGrid(props) {
     return(
         <main>
             <div id="ran-grid" style={props.mainGridStyles}>
-                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
-                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
-                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
-                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
-                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
-                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
-                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
-                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
-                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
-                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
-                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
-                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
-                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
-                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
-                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
-                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
-                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
-                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
-                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
-                <RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>
+                {/*<RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>*/}
+                {/*<RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>*/}
+                {/*<RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>*/}
+                {/*<RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>*/}
+                {/*<RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>*/}
+                {/*<RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>*/}
+                {/*<RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>*/}
+                {/*<RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>*/}
+                {/*<RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>*/}
+                {/*<RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>*/}
+                {/*<RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>*/}
+                {/*<RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>*/}
+                {/*<RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>*/}
+                {/*<RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>*/}
+                {/*<RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>*/}
+                {/*<RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>*/}
+                {/*<RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>*/}
+                {/*<RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>*/}
+                {/*<RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>*/}
+                {/*<RandomItem func={props.itemClickFunc} randomItemStyles={props.randomItemStyles} randomImageStyles={props.randomImageStyles} decade={props.decade}/>*/}
+                {props.itemArray}
             </div>
             <div id="item-info" style={props.itemInfoStyles}>
                 <div id="item-header" style={props.itemDescriptionStyles}>

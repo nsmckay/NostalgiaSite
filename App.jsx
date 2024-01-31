@@ -13,6 +13,7 @@ import snd80 from '/sound/80s_jingle.mp3'
 import snd90 from '/sound/90s_jingle.mp3'
 import snd2000 from '/sound/2000s_jingle.mp3'
 import snd2010 from '/sound/2010s_jingle.mp3'
+import RandomItem from "./RandomItem"
 
 export default function App() {
 
@@ -72,6 +73,9 @@ export default function App() {
     const[playSnd2000] = useSound(snd2000)
     const[playSnd2010] = useSound(snd2010)
 
+    const[apiUrl, setApiUrl] = React.useState("http://localhost:3002/2010s")
+    const[itemsArray, setItemsArray] = React.useState([])
+
     //let snd50 = new Audio('.sound/50s_jingle.mp3')
     //let snd60 = new Audio('.sound/60s_jingle.mp3')
     //let snd70 = new Audio('.sound/70s_jingle.mp3')
@@ -80,6 +84,81 @@ export default function App() {
     //let snd2000 = new Audio('.sound/2000s_jingle.mp3')
     //let snd2010 = new Audio('.sound/2010s_jingle.mp3')
     //let snd2020 = new Audio('.sound/2010s_jingle.mp3')
+
+    React.useEffect(async () => { //start of the quiz; fetch question data
+        switch(headDecade) {
+            case "1950s":
+                setApiUrl("http://localhost:3002/1950s")
+                //console.log(apiUrl)
+                break
+            case "1960s":
+                setApiUrl("http://localhost:3002/1960s")
+                //console.log(apiUrl)
+                break
+            case "1970s":
+                setApiUrl("http://localhost:3002/1970s")
+                //console.log(apiUrl)
+                break
+            case "1980s":
+                setApiUrl("http://localhost:3002/1980s")
+                //console.log(apiUrl)
+                break
+            case "1990s":
+                setApiUrl("http://localhost:3002/1990s")
+                //console.log(apiUrl)
+                break
+            case "2000s":
+                setApiUrl("http://localhost:3002/2000s")
+                //console.log(apiUrl)
+                break
+            case "2010s":
+                setApiUrl("http://localhost:3002/2010s")
+                //console.log(apiUrl)
+                break
+            default:
+                setApiUrl("http://localhost:3002/2010s")
+                //console.log(apiUrl)
+                break
+        }
+        //console.log(apiUrl)
+        const res = await fetch(apiUrl)
+        const data = await res.json()
+        setItemsArray(data.map(item => (
+                // <RandomItem
+                //     key={item.id}
+                //     id={item.id}
+                //     name={item.name}
+                //     itemDecade={item.decade}
+                //     category={item.category}
+                //     title={item.title}
+                //     subtitle={item.subtitle}
+                //     description={item.description}
+                //     imgurl={item.imgurl}
+                //     func={props.itemClickFunc}
+                //     randomItemStyles={props.randomItemStyles}
+                //     randomImageStyles={props.randomImageStyles}
+                //     decade={props.decade}
+                // />
+                <RandomItem
+                    key={item.id}
+                    id={item.id}
+                    name={item.name}
+                    itemDecade={item.decade}
+                    category={item.category}
+                    title={item.title}
+                    subtitle={item.subtitle}
+                    description={item.description}
+                    imgurl={item.imgurl}
+                    func={displayItemInfo}
+                    randomItemStyles={randomItemStyles}
+                    randomImageStyles={randomImageStyles}
+                    decade={headDecade}
+                />
+            )
+        ))
+        //console.log(itemsArray)
+    }, [changeTheme])
+    //}, [])
 
     function toggleBurgerMenu() {
         if(burgerMenuOpen) {
@@ -597,7 +676,8 @@ export default function App() {
         <div id="app-div">
             <BurgerMenu burgerMenuOpen={burgerMenuOpen} changeTheme={changeTheme} menuHelp={menuHelp} menuDisclaimer={menuDisclaimer}/>
             <Header burgerFunc={toggleBurgerMenu} burgerMenuOpen={burgerMenuOpen} logo={logo} logoRadius={logoRadius} decade={headDecade} headingFont={headingFontStyles} mainFont={mainFontStyles} headerStyles={headerFooterStyles}/>
-            <MainGrid itemClickFunc={displayItemInfo} returnFunc={returnToGrid} mainGridStyles={mainGridStyles} homeStyles={homeStyles} homeDescriptionStyles={homeDescriptionStyles} disclaimerStyles={disclaimerStyles} disclaimerDescriptionStyles={disclaimerDescriptionStyles} randomItemStyles={randomItemStyles} randomImageStyles={randomImageStyles} itemInfoStyles={itemInfoStyles} itemDescriptionStyles={itemDescriptionStyles} decade={headDecade}/>
+            {/*<MainGrid itemClickFunc={displayItemInfo} returnFunc={returnToGrid} mainGridStyles={mainGridStyles} homeStyles={homeStyles} homeDescriptionStyles={homeDescriptionStyles} disclaimerStyles={disclaimerStyles} disclaimerDescriptionStyles={disclaimerDescriptionStyles} randomItemStyles={randomItemStyles} randomImageStyles={randomImageStyles} itemInfoStyles={itemInfoStyles} itemDescriptionStyles={itemDescriptionStyles} decade={headDecade} itemsArray={itemsArray}/>*/}
+            <MainGrid returnFunc={returnToGrid} mainGridStyles={mainGridStyles} homeStyles={homeStyles} homeDescriptionStyles={homeDescriptionStyles} disclaimerStyles={disclaimerStyles} disclaimerDescriptionStyles={disclaimerDescriptionStyles} itemInfoStyles={itemInfoStyles} itemDescriptionStyles={itemDescriptionStyles} decade={headDecade} itemArray={itemsArray}/>
             <Footer buttonFunc={changeTheme} footerStyles={headerFooterStyles} footerButtonStyles={footerButtonStyles}/>
         </div>
     )

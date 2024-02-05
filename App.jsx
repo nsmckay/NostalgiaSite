@@ -60,6 +60,10 @@ export default function App() {
     const [itemDescriptionStyles, setItemDescriptionStyles] = React.useState({
         fontFamily: "'Helvetica', sans-serif"
     })
+    const [itemDescriptionImage, setItemDescriptionImage] = React.useState("img/placeHolder.png")
+    const [itemDescriptionTitle, setItemDescriptionTitle] = React.useState("ITEM")
+    const [itemDescriptionSub, setItemDescriptionSub] = React.useState("SUBHEADING")
+    const [itemDescriptionText, setItemDescriptionText] = React.useState("Info about item here. Info about item here. Info about item here.")
     const [footerButtonStyles, setFooterButtonStyles] = React.useState({
         color: "black",
         borderRadius: "10%"
@@ -558,11 +562,132 @@ export default function App() {
         }
     }
 
-    function displayItemInfo(decade) {
+    // function displayItemInfo(decade) {
+    //     setMainGridStyles({
+    //         display: "none"
+    //     })
+    //     switch(decade) {
+    //         case "1950s":
+    //             setItemInfoStyles({
+    //                 display: "flex",
+    //                 backgroundColor: "#fff0a3",
+    //                 backgroundImage: 'url("img/wallpaper/wallpaper_50s_2.png")',
+    //                 backgroundSize: "",
+    //                 color: "black",
+    //                 fontFamily: "'Georgia', serif"
+    //             })
+    //             setItemDescriptionStyles({
+    //                 fontFamily: "'Georgia', serif"
+    //             })
+    //             break
+    //         case "1960s":
+    //             setItemInfoStyles({
+    //                 display: "flex",
+    //                 backgroundColor: "#bcdfeb",
+    //                 backgroundImage: 'url("img/wallpaper/wallpaper_60s_2.png")',
+    //                 backgroundSize: "500px",
+    //                 color: "black",
+    //                 fontFamily: "'Helvetica', sans-serif"
+    //             })
+    //             setItemDescriptionStyles({
+    //                 fontFamily: "'Helvetica', sans-serif"
+    //             })
+    //             break
+    //         case "1970s":
+    //             setItemInfoStyles({
+    //                 display: "flex",
+    //                 backgroundColor: "#e3afba",
+    //                 backgroundImage: 'url("img/wallpaper/wallpaper_70s_2.png")',
+    //                 backgroundSize: "cover",
+    //                 color: "white",
+    //                 fontFamily: "'Arial', sans-serif"
+    //             })
+    //             setItemDescriptionStyles({
+    //                 fontFamily: "'Arial', sans-serif"
+    //             })
+    //             break
+    //         case "1980s":
+    //             setItemInfoStyles({
+    //                 display: "flex",
+    //                 backgroundColor: "black",
+    //                 backgroundImage: 'url("img/wallpaper/wallpaper_80s.png")',
+    //                 backgroundSize: "cover",
+    //                 color: "#ff3864",
+    //                 fontFamily: "Courier, monospace"
+    //             })
+    //             setItemDescriptionStyles({
+    //                 fontFamily: "Courier, monospace"
+    //             })
+    //             break
+    //         case "1990s":
+    //             setItemInfoStyles({
+    //                 display: "flex",
+    //                 backgroundColor: "white",
+    //                 color: "black",
+    //                 fontFamily: "'Comic Sans MS', Comic Sans, cursive"
+    //             })
+    //             setItemDescriptionStyles({
+    //                 fontFamily: "'Comic Sans MS', Comic Sans, cursive"
+    //             })
+    //             break
+    //         case "2000s":
+    //             setItemInfoStyles({
+    //                 display: "flex",
+    //                 backgroundColor: "yellow",
+    //                 color: "black",
+    //                 fontFamily: "'Helvetica', sans-serif"
+    //             })
+    //             setItemDescriptionStyles({
+    //                 fontFamily: "'Helvetica', sans-serif"
+    //             })
+    //             break
+    //         case "2010s":
+    //             setItemInfoStyles({
+    //                 display: "flex",
+    //                 backgroundColor: "white",
+    //                 color: "black",
+    //                 fontFamily: "'Helvetica', sans-serif"
+    //             })
+    //             setItemDescriptionStyles({
+    //                 fontFamily: "'Helvetica', sans-serif"
+    //             })
+    //             break
+    //         default:
+    //             setItemInfoStyles({
+    //                 display: "flex",
+    //                 backgroundColor: "black",
+    //                 color: "white",
+    //                 fontFamily: "'Helvetica', sans-serif"
+    //             })
+    //             setItemDescriptionStyles({
+    //                 fontFamily: "'Helvetica', sans-serif"
+    //             })
+    //     }
+    // }
+
+    function displayItemInfo(id) {
         setMainGridStyles({
             display: "none"
         })
-        switch(decade) {
+        // let currentItem = itemsArray.filter(item => {
+        //     return item.id === id
+        // })
+        let currentItem = itemsArray.filter(item => {
+            return item.key === id
+        })
+        //let currentItem = itemsArray
+        // console.log(id)
+        // console.log(typeof(id))
+        // console.log(currentItem)
+        // console.log(currentItem[0].key)
+        // console.log(typeof(currentItem[0].key))
+        // console.log(currentItem[0].props.name)
+        // console.log(currentItem[0].props.decade)
+        setItemDescriptionImage("img/" + currentItem[0].props.imgurl + ".png")
+        setItemDescriptionTitle(currentItem[0].props.title)
+        setItemDescriptionSub(currentItem[0].props.subtitle)
+        setItemDescriptionText(currentItem[0].props.description)
+        switch(currentItem[0].props.decade) {
             case "1950s":
                 setItemInfoStyles({
                     display: "flex",
@@ -677,7 +802,7 @@ export default function App() {
             <BurgerMenu burgerMenuOpen={burgerMenuOpen} changeTheme={changeTheme} menuHelp={menuHelp} menuDisclaimer={menuDisclaimer}/>
             <Header burgerFunc={toggleBurgerMenu} burgerMenuOpen={burgerMenuOpen} logo={logo} logoRadius={logoRadius} decade={headDecade} headingFont={headingFontStyles} mainFont={mainFontStyles} headerStyles={headerFooterStyles}/>
             {/*<MainGrid itemClickFunc={displayItemInfo} returnFunc={returnToGrid} mainGridStyles={mainGridStyles} homeStyles={homeStyles} homeDescriptionStyles={homeDescriptionStyles} disclaimerStyles={disclaimerStyles} disclaimerDescriptionStyles={disclaimerDescriptionStyles} randomItemStyles={randomItemStyles} randomImageStyles={randomImageStyles} itemInfoStyles={itemInfoStyles} itemDescriptionStyles={itemDescriptionStyles} decade={headDecade} itemsArray={itemsArray}/>*/}
-            <MainGrid returnFunc={returnToGrid} mainGridStyles={mainGridStyles} homeStyles={homeStyles} homeDescriptionStyles={homeDescriptionStyles} disclaimerStyles={disclaimerStyles} disclaimerDescriptionStyles={disclaimerDescriptionStyles} itemInfoStyles={itemInfoStyles} itemDescriptionStyles={itemDescriptionStyles} decade={headDecade} itemArray={itemsArray}/>
+            <MainGrid returnFunc={returnToGrid} mainGridStyles={mainGridStyles} homeStyles={homeStyles} homeDescriptionStyles={homeDescriptionStyles} disclaimerStyles={disclaimerStyles} disclaimerDescriptionStyles={disclaimerDescriptionStyles} itemInfoStyles={itemInfoStyles} itemDescriptionStyles={itemDescriptionStyles} itemDescriptionImage={itemDescriptionImage} itemDescriptionTitle={itemDescriptionTitle} itemDescriptionSub={itemDescriptionSub} itemDescriptionText={itemDescriptionText} decade={headDecade} itemArray={itemsArray}/>
             <Footer buttonFunc={changeTheme} footerStyles={headerFooterStyles} footerButtonStyles={footerButtonStyles}/>
         </div>
     )

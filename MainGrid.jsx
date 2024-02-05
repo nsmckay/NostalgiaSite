@@ -30,13 +30,17 @@ export default function MainGrid(props) {
             <div id="item-info" style={props.itemInfoStyles}>
                 <div id="item-header" style={props.itemDescriptionStyles}>
                     <div></div>
-                    <h3 style={props.itemDescriptionStyles}>ITEM</h3>
+                    {/* <h3 style={props.itemDescriptionStyles}>ITEM</h3> */}
+                    <h3 style={props.itemDescriptionStyles}>{props.itemDescriptionTitle}</h3>
                     <button onClick={()=>props.returnFunc()}>↩</button>
                 </div>
-                <h4 id="item-subheader" style={props.itemDescriptionStyles}>SUBHEADING</h4>
-                <img src="img/placeHolder.png" height="200" width="200"/>
+                {/* <h4 id="item-subheader" style={props.itemDescriptionStyles}>SUBHEADING</h4> */}
+                <h4 id="item-subheader" style={props.itemDescriptionStyles}>{props.itemDescriptionSub}</h4>
+                {/*<img src="img/placeHolder.png" height="200" width="200"/>*/}
+                <img src={props.itemDescriptionImage} height="200" width="200"/>
                 <div id="item-description" style={props.itemDescriptionStyles}>
-                    <p style={props.itemDescriptionStyles}>Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here.</p>
+                    {/* <p style={props.itemDescriptionStyles}>Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here.</p> */}
+                    <p style={props.itemDescriptionStyles}>{props.itemDescriptionText}</p>
                 </div>
             </div>
             <div id="welcome" style={props.homeStyles}>

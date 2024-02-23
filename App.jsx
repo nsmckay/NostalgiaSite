@@ -77,7 +77,8 @@ export default function App() {
     const[playSnd2000] = useSound(snd2000)
     const[playSnd2010] = useSound(snd2010)
 
-    const[apiUrl, setApiUrl] = React.useState("http://localhost:3002/2010s")
+    // const[apiUrl, setApiUrl] = React.useState("http://localhost:3002/2010s")
+    const[apiUrl, setApiUrl] = React.useState("https://xapphub.com/nostalgia/controller/task.php?decade=2010")
     const[itemsArray, setItemsArray] = React.useState([])
 
     //let snd50 = new Audio('.sound/50s_jingle.mp3')
@@ -92,57 +93,54 @@ export default function App() {
     React.useEffect(async () => { //start of the quiz; fetch question data
         switch(headDecade) {
             case "1950s":
-                setApiUrl("http://localhost:3002/1950s")
+                // setApiUrl("http://localhost:3002/1950s")
+                setApiUrl("https://xapphub.com/nostalgia/controller/task.php?decade=1950")
                 //console.log(apiUrl)
                 break
             case "1960s":
-                setApiUrl("http://localhost:3002/1960s")
+                // setApiUrl("http://localhost:3002/1960s")
+                setApiUrl("https://xapphub.com/nostalgia/controller/task.php?decade=1960")
                 //console.log(apiUrl)
                 break
             case "1970s":
-                setApiUrl("http://localhost:3002/1970s")
+                // setApiUrl("http://localhost:3002/1970s")
+                setApiUrl("https://xapphub.com/nostalgia/controller/task.php?decade=1970")
                 //console.log(apiUrl)
                 break
             case "1980s":
-                setApiUrl("http://localhost:3002/1980s")
+                // setApiUrl("http://localhost:3002/1980s")
+                setApiUrl("https://xapphub.com/nostalgia/controller/task.php?decade=1980")
                 //console.log(apiUrl)
                 break
             case "1990s":
-                setApiUrl("http://localhost:3002/1990s")
+                // setApiUrl("http://localhost:3002/1990s")
+                setApiUrl("https://xapphub.com/nostalgia/controller/task.php?decade=1990")
                 //console.log(apiUrl)
                 break
             case "2000s":
-                setApiUrl("http://localhost:3002/2000s")
+                // setApiUrl("http://localhost:3002/2000s")
+                setApiUrl("https://xapphub.com/nostalgia/controller/task.php?decade=2000")
                 //console.log(apiUrl)
                 break
             case "2010s":
-                setApiUrl("http://localhost:3002/2010s")
+                // setApiUrl("http://localhost:3002/2010s")
+                setApiUrl("https://xapphub.com/nostalgia/controller/task.php?decade=2010")
                 //console.log(apiUrl)
                 break
             default:
-                setApiUrl("http://localhost:3002/2010s")
+                // setApiUrl("http://localhost:3002/2010s")
+                setApiUrl("https://xapphub.com/nostalgia/controller/task.php?decade=2010")
                 //console.log(apiUrl)
                 break
         }
         //console.log(apiUrl)
         const res = await fetch(apiUrl)
         const data = await res.json()
-        setItemsArray(data.map(item => (
-                // <RandomItem
-                //     key={item.id}
-                //     id={item.id}
-                //     name={item.name}
-                //     itemDecade={item.decade}
-                //     category={item.category}
-                //     title={item.title}
-                //     subtitle={item.subtitle}
-                //     description={item.description}
-                //     imgurl={item.imgurl}
-                //     func={props.itemClickFunc}
-                //     randomItemStyles={props.randomItemStyles}
-                //     randomImageStyles={props.randomImageStyles}
-                //     decade={props.decade}
-                // />
+        console.log(data)
+        console.log(data.data.tasks)
+        // setItemsArray(data.map(item => (
+        // setItemsArray(Object.keys(data).map(item => (
+        setItemsArray(data.data.tasks.map(item => (
                 <RandomItem
                     key={item.id}
                     id={item.id}
@@ -158,9 +156,24 @@ export default function App() {
                     randomImageStyles={randomImageStyles}
                     decade={headDecade}
                 />
+                // <RandomItem
+                //     key={item.tasks.id}
+                //     id={item.tasks.id}
+                //     name={item.tasks.name}
+                //     itemDecade={item.tasks.decade}
+                //     category={item.tasks.category}
+                //     title={item.tasks.title}
+                //     subtitle={item.tasks.subtitle}
+                //     description={item.tasks.description}
+                //     imgurl={item.tasks.imgurl}
+                //     func={displayItemInfo}
+                //     randomItemStyles={randomItemStyles}
+                //     randomImageStyles={randomImageStyles}
+                //     decade={headDecade}
+                // />
             )
         ))
-        //console.log(itemsArray)
+        console.log(itemsArray)
     }, [changeTheme])
     //}, [])
 

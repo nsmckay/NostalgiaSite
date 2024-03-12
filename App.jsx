@@ -90,12 +90,13 @@ export default function App() {
     //let snd2010 = new Audio('.sound/2010s_jingle.mp3')
     //let snd2020 = new Audio('.sound/2010s_jingle.mp3')
 
-    React.useEffect(async () => { //start of the quiz; fetch question data
+    React.useEffect(async () => { //refresh page; fetch data for decade
+        console.log(headDecade)
         switch(headDecade) {
             case "1950s":
                 // setApiUrl("http://localhost:3002/1950s")
                 setApiUrl("https://xapphub.com/nostalgia/controller/task.php?decade=1950")
-                //console.log(apiUrl)
+                console.log(apiUrl)
                 break
             case "1960s":
                 // setApiUrl("http://localhost:3002/1960s")
@@ -150,8 +151,8 @@ export default function App() {
                     title={item.title}
                     subtitle={item.subtitle}
                     description={item.description}
-                    imgurl={item.imgurl}
-                    func={displayItemInfo}
+                    imgurl={item.img_url}
+                    func={displayItemInfo} //stale closure here, will need to work around this
                     randomItemStyles={randomItemStyles}
                     randomImageStyles={randomImageStyles}
                     decade={headDecade}
@@ -174,7 +175,7 @@ export default function App() {
             )
         ))
         console.log(itemsArray)
-    }, [changeTheme])
+    }, [headDecade, apiUrl]) //apiUrl makes no difference
     //}, [])
 
     function toggleBurgerMenu() {
@@ -226,6 +227,7 @@ export default function App() {
     }
 
     function changeTheme(decade) {
+        //console.log(decade)
         setItemInfoStyles({
             display: "none"
         })
@@ -237,6 +239,7 @@ export default function App() {
         })
         switch(decade) {
             case "1950s":
+                setApiUrl("https://xapphub.com/nostalgia/controller/task.php?decade=1950")
                 //snd50.play()
                 playSnd50()
                 setLogo("img/logos/logo_50s_2.png")
@@ -285,6 +288,7 @@ export default function App() {
                 document.body.style = "background: #2b2116" //raw javasacript is only solution I could find to change body color
                 break
             case "1960s":
+                setApiUrl("https://xapphub.com/nostalgia/controller/task.php?decade=1960")
                 //snd60.play()
                 playSnd60()
                 setLogo("img/logos/logo_60s_1.png")
@@ -329,6 +333,7 @@ export default function App() {
                 document.body.style = "background: #336d80"
                 break
             case "1970s":
+                setApiUrl("https://xapphub.com/nostalgia/controller/task.php?decade=1970")
                 //snd70.play()
                 playSnd70()
                 setLogo("img/logos/logo_70s_1.png")
@@ -373,6 +378,7 @@ export default function App() {
                 document.body.style = "background: #951458"
                 break
             case "1980s":
+                setApiUrl("https://xapphub.com/nostalgia/controller/task.php?decade=1980")
                 //snd80.play()
                 playSnd80()
                 setLogo("img/logos/logo_80s_1.png")
@@ -417,6 +423,7 @@ export default function App() {
                 document.body.style = "background: black"
                 break
             case "1990s":
+                setApiUrl("https://xapphub.com/nostalgia/controller/task.php?decade=1990")
                 //snd90.play()
                 playSnd90()
                 setLogo("img/logos/logo_90s_2.png")
@@ -459,6 +466,7 @@ export default function App() {
                 document.body.style = "background: lightgrey"
                 break
             case "2000s":
+                setApiUrl("https://xapphub.com/nostalgia/controller/task.php?decade=2000")
                 //snd2000.play()
                 playSnd2000()
                 setLogo("img/logos/logo_2000s_1.png")
@@ -500,6 +508,7 @@ export default function App() {
                 document.body.style = "background: black"
                 break
             case "2010s":
+                setApiUrl("https://xapphub.com/nostalgia/controller/task.php?decade=2010")
                 //snd2010.play()
                 playSnd2010()
                 setLogo("img/logos/logo_2010s_1.png")
@@ -537,6 +546,7 @@ export default function App() {
                 document.body.style = "background: skyblue"
                 break
             default:
+                setApiUrl("https://xapphub.com/nostalgia/controller/task.php?decade=2010")
                 //snd2020.play()
                 //playSnd2010()
                 setLogo("img/logos/logo_2020s_1.png")
@@ -678,7 +688,8 @@ export default function App() {
     //     }
     // }
 
-    function displayItemInfo(id) {
+    //function displayItemInfo(id) {
+    function displayItemInfo(id, title, subtitle, description, imgurl, decade) {
         setMainGridStyles({
             display: "none"
         })
@@ -691,16 +702,21 @@ export default function App() {
         //let currentItem = itemsArray
         // console.log(id)
         // console.log(typeof(id))
-        // console.log(currentItem)
+        console.log(currentItem)
         // console.log(currentItem[0].key)
         // console.log(typeof(currentItem[0].key))
         // console.log(currentItem[0].props.name)
         // console.log(currentItem[0].props.decade)
-        setItemDescriptionImage("img/" + currentItem[0].props.imgurl + ".png")
-        setItemDescriptionTitle(currentItem[0].props.title)
-        setItemDescriptionSub(currentItem[0].props.subtitle)
-        setItemDescriptionText(currentItem[0].props.description)
-        switch(currentItem[0].props.decade) {
+        //setItemDescriptionImage("img/" + currentItem[0].props.img_url + ".png")
+        //setItemDescriptionTitle(currentItem[0].props.title)
+        //setItemDescriptionSub(currentItem[0].props.subtitle)
+        //setItemDescriptionText(currentItem[0].props.description)
+        setItemDescriptionImage("img/" + imgurl + ".png")
+        setItemDescriptionTitle(title)
+        setItemDescriptionSub(subtitle)
+        setItemDescriptionText(description)
+        //switch(currentItem[0].props.decade) {
+        switch(decade) {
             case "1950s":
                 setItemInfoStyles({
                     display: "flex",

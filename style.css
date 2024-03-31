@@ -51,6 +51,11 @@ h1 {
     margin-left: 20px;
 }
 
+pre {
+    white-space: pre-wrap;
+    font-family: inherit;
+}
+
 #heading-display {
     display: flex;
     flex-direction: row;
@@ -189,6 +194,8 @@ footer button:hover {
     margin-left: 100px;
     margin-right: 100px;
     margin-top: 10px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 #welcome {
@@ -201,6 +208,13 @@ footer button:hover {
     background-color: blue;
     padding-left: 100px;
     padding-right: 100px;
+    line-height: 1.5;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+#welcome ul li {
+    padding: 10px 0px;
 }
 
 #disclaimer {
@@ -213,7 +227,33 @@ footer button:hover {
     background-color: blue;
     padding-left: 100px;
     padding-right: 100px;
+    line-height: 1.5;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }   
+
+#disclaimer ul li {
+    padding: 10px 0px;
+}
+
+#credits {
+    display: none; /* set to flex */
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    height: 75%;
+    width: 60%;
+    background-color: blue;
+    padding-left: 100px;
+    padding-right: 100px;
+    line-height: 1.5;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+#credits ul li {
+    padding: 10px 0px;
+}
 
 @media (max-width: 1400px) {
     .burger-open{
@@ -235,10 +275,10 @@ footer button:hover {
         grid-auto-rows: minmax(100px, auto);
         padding: 10px;
     }
-    #item-info, #welcome, #disclaimer {
+    #item-info, #welcome, #disclaimer, #credits {
         width: 70%;
     }
-    #welcome, #disclaimer {
+    #welcome, #disclaimer, #credits {
         padding-left: 80px;
         padding-right: 80px;
     }
@@ -255,10 +295,10 @@ footer button:hover {
         grid-auto-rows: minmax(100px, auto);
         padding: 10px;
     }
-    #item-info, #welcome, #disclaimer {
+    #item-info, #welcome, #disclaimer, #credits {
         width: 80%;
     }
-    #welcome, #disclaimer {
+    #welcome, #disclaimer, #credits {
         padding-left: 60px;
         padding-right: 60px;
     }
@@ -302,10 +342,10 @@ footer button:hover {
     .burger-open ul li {
         font-size: 18px;
     }
-    #item-info, #welcome, #disclaimer {
+    #item-info, #welcome, #disclaimer, #credits {
         width: 90%;
     }
-    #welcome, #disclaimer {
+    #welcome, #disclaimer, #credits {
         padding-left: 40px;
         padding-right: 40px;
     }
@@ -359,10 +399,10 @@ footer button:hover {
     .burger-open ul li {
         font-size: 14px;
     }
-    #item-info, #welcome, #disclaimer {
+    #item-info, #welcome, #disclaimer, #credits {
         width: 100%;
     }
-    #welcome, #disclaimer {
+    #welcome, #disclaimer, #credits {
         padding-left: 20px;
         padding-right: 20px;
     }

@@ -12,7 +12,7 @@ export default function Footer(props) {
                 <FooterButton func={props.buttonFunc} text={"1990s"} buttonStyles={props.footerButtonStyles}/>
                 <FooterButton func={props.buttonFunc} text={"2000s"} buttonStyles={props.footerButtonStyles}/>
                 <FooterButton func={props.buttonFunc} text={"2010s"} buttonStyles={props.footerButtonStyles}/>
-                <FooterButton func={props.buttonFunc} text={"HOME"} buttonStyles={props.footerButtonStyles}/>
+                <FooterButton func={props.menuHelp} text={"HOME"} buttonStyles={props.footerButtonStyles}/>
             </nav>
         </footer>
     )

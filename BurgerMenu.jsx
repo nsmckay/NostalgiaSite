@@ -7,6 +7,7 @@ export default function BurgerMenu(props) {
                 <ul>
                     <li onClick={()=>props.menuHelp()}>Help</li>
                     <li onClick={()=>props.menuDisclaimer()}>Disclaimer</li>
+                    <li onClick={()=>props.menuCredits()}>Credits</li>
                 </ul>
             </nav>
         </div>

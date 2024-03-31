@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 //import Question from "./Question"
 import Header from "./Header"
 import BurgerMenu from "./BurgerMenu"
@@ -14,6 +14,8 @@ import snd90 from '/sound/90s_jingle.mp3'
 import snd2000 from '/sound/2000s_jingle.mp3'
 import snd2010 from '/sound/2010s_jingle.mp3'
 import RandomItem from "./RandomItem"
+
+import { sanitise } from "./utility"
 
 export default function App() {
 
@@ -42,6 +44,12 @@ export default function App() {
         display: "none"
     })
     const [disclaimerDescriptionStyles, setDisclaimerDescriptionStyles] = React.useState({
+        fontFamily: "'Helvetica', sans-serif"
+    })
+    const [creditsStyles, setCreditsStyles] = React.useState({
+        display: "none"
+    })
+    const [creditsDescriptionStyles, setCreditsDescriptionStyles] = React.useState({
         fontFamily: "'Helvetica', sans-serif"
     })
     const [mainGridStyles, setMainGridStyles] = React.useState({
@@ -191,6 +199,9 @@ export default function App() {
         setDisclaimerStyles({
             display: "none"
         })
+        setCreditsStyles({
+            display: "none"
+        })
         setMainGridStyles({
             display: "none"
         })
@@ -206,6 +217,10 @@ export default function App() {
         toggleBurgerMenu()
     }
 
+    React.useEffect(() => {
+        menuHelp()
+    }, [])
+
     function menuDisclaimer() {
         changeTheme("2020s")
         setHomeStyles({
@@ -220,7 +235,33 @@ export default function App() {
             color: "white",
             fontFamily: "'Helvetica', sans-serif"
         })
+        setCreditsStyles({
+            display: "none"
+        })
         setDisclaimerDescriptionStyles({
+            fontFamily: "'Helvetica', sans-serif"
+        })
+        toggleBurgerMenu()
+    }
+
+    function menuCredits() {
+        changeTheme("2020s")
+        setHomeStyles({
+            display: "none"
+        })
+        setMainGridStyles({
+            display: "none"
+        })
+        setDisclaimerStyles({
+            display: "none"
+        })
+        setCreditsStyles({
+            display: "flex",
+            backgroundColor: "black",
+            color: "white",
+            fontFamily: "'Helvetica', sans-serif"
+        })
+        setCreditsDescriptionStyles({
             fontFamily: "'Helvetica', sans-serif"
         })
         toggleBurgerMenu()
@@ -235,6 +276,9 @@ export default function App() {
             display: "none"
         })
         setDisclaimerStyles({
+            display: "none"
+        })
+        setCreditsStyles({
             display: "none"
         })
         switch(decade) {
@@ -714,7 +758,7 @@ export default function App() {
         setItemDescriptionImage("img/" + imgurl + ".png")
         setItemDescriptionTitle(title)
         setItemDescriptionSub(subtitle)
-        setItemDescriptionText(description)
+        setItemDescriptionText(sanitise(description))
         //switch(currentItem[0].props.decade) {
         switch(decade) {
             case "1950s":
@@ -828,11 +872,11 @@ export default function App() {
 
     return(
         <div id="app-div">
-            <BurgerMenu burgerMenuOpen={burgerMenuOpen} changeTheme={changeTheme} menuHelp={menuHelp} menuDisclaimer={menuDisclaimer}/>
+            <BurgerMenu burgerMenuOpen={burgerMenuOpen} changeTheme={changeTheme} menuHelp={menuHelp} menuDisclaimer={menuDisclaimer} menuCredits={menuCredits}/>
             <Header burgerFunc={toggleBurgerMenu} burgerMenuOpen={burgerMenuOpen} logo={logo} logoRadius={logoRadius} decade={headDecade} headingFont={headingFontStyles} mainFont={mainFontStyles} headerStyles={headerFooterStyles}/>
             {/*<MainGrid itemClickFunc={displayItemInfo} returnFunc={returnToGrid} mainGridStyles={mainGridStyles} homeStyles={homeStyles} homeDescriptionStyles={homeDescriptionStyles} disclaimerStyles={disclaimerStyles} disclaimerDescriptionStyles={disclaimerDescriptionStyles} randomItemStyles={randomItemStyles} randomImageStyles={randomImageStyles} itemInfoStyles={itemInfoStyles} itemDescriptionStyles={itemDescriptionStyles} decade={headDecade} itemsArray={itemsArray}/>*/}
-            <MainGrid returnFunc={returnToGrid} mainGridStyles={mainGridStyles} homeStyles={homeStyles} homeDescriptionStyles={homeDescriptionStyles} disclaimerStyles={disclaimerStyles} disclaimerDescriptionStyles={disclaimerDescriptionStyles} itemInfoStyles={itemInfoStyles} itemDescriptionStyles={itemDescriptionStyles} itemDescriptionImage={itemDescriptionImage} itemDescriptionTitle={itemDescriptionTitle} itemDescriptionSub={itemDescriptionSub} itemDescriptionText={itemDescriptionText} decade={headDecade} itemArray={itemsArray}/>
-            <Footer buttonFunc={changeTheme} footerStyles={headerFooterStyles} footerButtonStyles={footerButtonStyles}/>
+            <MainGrid returnFunc={returnToGrid} mainGridStyles={mainGridStyles} homeStyles={homeStyles} homeDescriptionStyles={homeDescriptionStyles} disclaimerStyles={disclaimerStyles} disclaimerDescriptionStyles={disclaimerDescriptionStyles} creditsStyles={creditsStyles} creditsDescriptionStyles={creditsDescriptionStyles} itemInfoStyles={itemInfoStyles} itemDescriptionStyles={itemDescriptionStyles} itemDescriptionImage={itemDescriptionImage} itemDescriptionTitle={itemDescriptionTitle} itemDescriptionSub={itemDescriptionSub} itemDescriptionText={itemDescriptionText} decade={headDecade} itemArray={itemsArray}/>
+            <Footer buttonFunc={changeTheme} menuHelp={menuHelp} footerStyles={headerFooterStyles} footerButtonStyles={footerButtonStyles}/>
         </div>
     )
 }

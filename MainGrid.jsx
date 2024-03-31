@@ -40,7 +40,9 @@ export default function MainGrid(props) {
                 <img src={props.itemDescriptionImage} height="200" width="200"/>
                 <div id="item-description" style={props.itemDescriptionStyles}>
                     {/* <p style={props.itemDescriptionStyles}>Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here. Info about item here.</p> */}
-                    <p style={props.itemDescriptionStyles}>{props.itemDescriptionText}</p>
+                    <p style={props.itemDescriptionStyles}>
+                        <pre>{props.itemDescriptionText}</pre>
+                    </p>
                 </div>
             </div>
             <div id="welcome" style={props.homeStyles}>
@@ -58,9 +60,25 @@ export default function MainGrid(props) {
                 <ul style={props.disclaimerDescriptionStyles}>
                     <li>I (the creator of this website) do not claim to be, by any means, an expert on pop culture or its history.</li>
                     <li>As a human being, there will be biases in what items I include in my database. Largely based on what I'm familiar with, or what I've at least heard of.</li>
+                    <li>Most English language resources I used to research what was popular each decade were American, so there is likely to be a bias towards what was popular in the USA at the time.</li>
                     <li>As pop culture is the focus, I opted to exclude the likes of disasters, controversies and political figures, except if they had a profound impact on pop culture (e.g. US presidents)</li>
                     <li>The item descriptions were generated using AI. Given the amount of items, it would take too long to write each description by myself.</li>
                     <li>AI has also been used to generate images where no suitable stock image was available for free use.</li>
+                    <li>As this is an educational website, it is believed all resources used would fall under Fair Use anyway.</li>
+                </ul>
+            </div>
+            <div id="credits" style={props.creditsStyles}>
+                <h3 style={props.creditsDescriptionStyles}>CREDITS</h3>
+                <ul style={props.creditsDescriptionStyles}>
+                    <li>Concept and Design - Me (Neil McKay)</li>
+                    <li>Website frontend - Me</li>
+                    <li>Website backend/API - www.xapphub.com</li>
+                    <li>Database used for API - Me</li>
+                    <li>Image thumbnails - Public domain stock images from Pixabay and Wikipedia</li>
+                    <li>AI generated thumbnails - Bing Image Creator and Craiyon</li>
+                    <li>AI generated text descriptions - Bing Chat (now Microscoft Copilot)</li>
+                    <li>Nostalgia site logos - Me (1950-1990 were edited using public domain stock resources from Pixabay)</li>
+                    <li>Backgrounds - public domain stock resources from Pixabay</li>
                 </ul>
             </div>
         </main>
